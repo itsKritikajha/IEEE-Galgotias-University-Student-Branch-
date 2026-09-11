@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-cursive: 'Great Vibes', cursive;
+  
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 98, 155, 0.15);
+}
+
+.dark {
+  --bg-main: #0b0f19;
+  --text-main: #f3f4f6;
+  --card-bg: #0f172a;
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Duotone Filter for Team Cards matching Poster */
+.poster-duotone-img {
+  filter: grayscale(100%) contrast(125%) brightness(110%);
+  transition: all 0.5s ease-in-out;
+}
+
+.team-card-wrapper:hover .poster-duotone-img {
+  filter: grayscale(0%) contrast(105%) brightness(100%);
+  transform: scale(1.04);
+}
+
+/* Custom Glassmorphism Utility */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-purple {
+  background: rgba(124, 58, 237, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+/* Poster Title Accent Typography */
+.font-cursive-accent {
+  font-family: var(--font-cursive);
+}
+
+.font-serif-display {
+  font-family: var(--font-playfair);
+}
+
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

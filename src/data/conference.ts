@@ -1,0 +1,42 @@
+export const CONFERENCE_DATA = {
+  title: "ICCSAI 2026",
+  fullTitle: "2026 IEEE 4th International Conference on Communication, Security, and Artificial Intelligence",
+  dates: "November 28–30, 2026",
+  isoStartDate: "2026-11-28T09:00:00+05:30",
+  venue: {
+    name: "Galgotias University",
+    city: "Greater Noida (NCR Delhi)",
+    address: "Plot No. 2, Yamuna Expy, opposite Buddha International Circuit, Sector 17A, Greater Noida, UP 203201",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3513.682664531804!2d77.53856137637854!3d28.36830767581079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc76735e5d169%3A0x6b47c0b8b80e8e4e!2sGalgotias%20University!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  importantDates: [
+    { event: "Abstract Submission", date: "14 July 2026" },
+    { event: "Full Paper Submission", date: "15 September 2026", highlight: true },
+    { event: "Notification of Acceptance", date: "06 October 2026" },
+    { event: "Camera-Ready Submission", date: "13 October 2026" },
+    { event: "Conference Dates", date: "28–30 November 2026", highlight: true },
+  ],
+  tracks: [
+    { title: "Artificial Intelligence & Machine Learning", icon: "BrainCircuit", desc: "Deep Learning, LLMs, Computer Vision, Autonomous Systems" },
+    { title: "Cybersecurity & Privacy", icon: "ShieldCheck", desc: "Threat Intelligence, Zero-Trust, Network Security, Quantum Cryptography" },
+    { title: "Networking & Communication", icon: "Wifi", desc: "6G Systems, IoT, Edge Computing, Satellite Networks" },
+    { title: "Data & Computing", icon: "Database", desc: "Big Data, High Performance Computing, Distributed Systems" },
+    { title: "Electronics & Hardware", icon: "Cpu", desc: "VLSI, Low-Power Systems, Embedded Hardware, RF Systems" },
+    { title: "Blockchain & Cryptography", icon: "Blocks", desc: "Smart Contracts, Web3 Infrastructures, DeFi Security" },
+    { title: "Energy & Sustainability", icon: "Zap", desc: "Smart Grids, Green Computing, Renewable Systems" },
+    { title: "Specialized Applications", icon: "Layers", desc: "Healthcare AI, Intelligent Transportation, Smart Cities" },
+  ],
+  highlights: [
+    { title: "Global Participation", desc: "Researchers & keynotes from over 20 countries." },
+    { title: "Expert Keynote Sessions", desc: "Delivered by IEEE Fellows & IIT Professors." },
+    { title: "IEEE Xplore Publication", desc: "Proceedings submitted for inclusion in IEEE Xplore & Scopus." },
+  ],
+  attractions: [
+    { name: "Red Fort", distance: "48 km from Campus", image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80" },
+    { name: "Qutub Minar", distance: "42 km from Campus", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" },
+    { name: "India Gate", distance: "40 km from Campus", image: "https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?auto=format&fit=crop&w=800&q=80" },
+    { name: "Taj Mahal", distance: "165 km via Yamuna Expressway", image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80" },
+    { name: "Rishikesh", distance: "230 km from Campus", image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=800&q=80" },
+    { name: "Haridwar", distance: "220 km from Campus", image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=800&q=80" },
+  ],
+};
