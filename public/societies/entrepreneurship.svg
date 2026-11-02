@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" width="360" height="90" fill="none">
+  <g id="ieee-entrepreneurship-logo">
+    <!-- Icon: Diamond Badge with Rising Lightbulb / Rocket Spark -->
+    <g transform="translate(10, 10)">
+      <!-- Outer Glow Diamond -->
+      <polygon points="35,2 68,35 35,68 2,35" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="2.5" stroke-linejoin="round"/>
+      <polygon points="35,10 60,35 35,60 10,35" fill="#0F172A" stroke="#FBBF24" stroke-width="1.5" stroke-linejoin="round"/>
+      
+      <!-- Rising Spark / Innovation Flame -->
+      <path d="M35 18 C33 26, 26 30, 26 38 C26 44, 30 48, 35 48 C40 48, 44 44, 44 38 C44 30, 37 26, 35 18 Z" fill="url(#amber-grad)" />
+      <circle cx="35" cy="38" r="3.5" fill="#FEF08A" />
+      <line x1="35" y1="48" x2="35" y2="52" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+      <!-- Energy Rays -->
+      <line x1="22" y1="26" x2="18" y2="23" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+      <line x1="48" y1="26" x2="52" y2="23" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="38" x2="15" y2="38" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+      <line x1="50" y1="38" x2="55" y2="38" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Typography -->
+    <text x="88" y="40" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="1">IEEE</text>
+    <text x="162" y="40" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#F59E0B" letter-spacing="0.5">Entrepreneurship</text>
+    
+    <text x="88" y="62" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="10.5" fill="#94A3B8" letter-spacing="1.5">VENTURE CREATION &amp; TECH INNOVATION</text>
+  </g>
+  <defs>
+    <linearGradient id="amber-grad" x1="26" y1="18" x2="44" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE047"/>
+      <stop offset="0.5" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+</svg>

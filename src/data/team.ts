@@ -24,13 +24,13 @@ export const FACULTY_ADVISOR: TeamMember = {
 
 export const CORE_TEAM: TeamMember[] = [
   {
-    id: "atharav-singh",
-    name: "Atharav",
+    id: "atharva-singh",
+    name: "Atharva",
     surname: "Singh",
     role: "Treasurer",
     photo: "/images/team/atharav-singh.jpg",
-    linkedin: "https://www.linkedin.com/in/atharav-singh",
-    email: "atharav.singh@ieee.org",
+    linkedin: "https://www.linkedin.com/in/atharva-singh",
+    email: "atharva.singh@ieee.org",
   },
   {
     id: "mohammad-rahil",

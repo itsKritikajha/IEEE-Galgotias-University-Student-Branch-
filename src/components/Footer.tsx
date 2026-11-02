@@ -30,17 +30,28 @@ export const Footer: React.FC = () => {
           {/* Col 1 & 2: Branding */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 via-purple-600 to-red-500 p-0.5 shadow-lg">
-                <div className="w-full h-full bg-[#070a12] rounded-[10px] flex items-center justify-center font-extrabold text-sm text-sky-400">
-                  IEEE
-                </div>
+              <div className="flex items-center h-10 px-2.5 py-1 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logos/gulogo.png"
+                  alt="Galgotias University"
+                  className="h-6 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center h-10 px-2.5 py-1 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logos/ieee-sb-transparent.png"
+                  alt="IEEE Student Branch"
+                  className="h-6 w-auto object-contain"
+                />
               </div>
               <div>
                 <div className="text-base font-extrabold text-white tracking-wide">
                   IEEE GU SB
                 </div>
                 <div className="text-xs text-purple-400 font-medium">
-                  IEEE Galgotias University Student Branch
+                  #STB99158 • Galgotias University
                 </div>
               </div>
             </div>
@@ -128,30 +139,58 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: ICCSAI 2026 Subsite */}
+          {/* Col 4: Flagship Conferences & Portals */}
           <div>
             <h3 className="text-white text-xs font-bold uppercase tracking-wider mb-4 border-l-2 border-purple-500 pl-2">
-              ICCSAI 2026 Conference
+              Conferences
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/iccsai-2026" className="hover:text-purple-300 transition-colors">
-                  Conference Hub Home
+                <a
+                  href="https://www.iccsai.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-purple-300 hover:text-white transition-colors flex items-center justify-between group"
+                >
+                  <span>ICCSAI Official Portal</span>
+                  <ExternalLink className="w-3 h-3 text-purple-400 group-hover:text-white" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.iccca.co.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-cyan-300 hover:text-white transition-colors flex items-center justify-between group"
+                >
+                  <span>ICCCA Official Portal</span>
+                  <ExternalLink className="w-3 h-3 text-cyan-400 group-hover:text-white" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.ic2pct.co.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-emerald-300 hover:text-white transition-colors flex items-center justify-between group"
+                >
+                  <span>IC2PCT Official Portal</span>
+                  <ExternalLink className="w-3 h-3 text-emerald-400 group-hover:text-white" />
+                </a>
+              </li>
+              <li className="pt-2 border-t border-white/10">
+                <Link href="/iccsai-2026" className="hover:text-purple-300 transition-colors block">
+                  ICCSAI 2026 Subsite Hub
                 </Link>
               </li>
               <li>
-                <Link href="/iccsai-2026/committee" className="hover:text-purple-300 transition-colors">
+                <Link href="/iccsai-2026/committee" className="hover:text-purple-300 transition-colors block">
                   Organizing Committee
                 </Link>
               </li>
               <li>
-                <Link href="/iccsai-2026/registration" className="hover:text-purple-300 transition-colors">
-                  Registration Fees & CMT
-                </Link>
-              </li>
-              <li>
-                <Link href="/iccsai-2026/guidelines" className="hover:text-purple-300 transition-colors">
-                  Author Submission Guidelines
+                <Link href="/iccsai-2026/registration" className="hover:text-purple-300 transition-colors block">
+                  Registration & Fees
                 </Link>
               </li>
               <li>
@@ -159,9 +198,9 @@ export const Footer: React.FC = () => {
                   href="https://cmt3.research.microsoft.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-amber-300 hover:underline flex items-center gap-1 font-semibold"
+                  className="text-amber-300 hover:underline flex items-center gap-1 font-semibold pt-1"
                 >
-                  Microsoft CMT Submission <ExternalLink className="w-3 h-3" />
+                  Microsoft CMT Portal <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>
@@ -199,11 +238,17 @@ export const Footer: React.FC = () => {
             © 2026 IEEE Galgotias University Student Branch (IEEE GU SB). All rights reserved.
           </div>
           <div className="flex items-center gap-4 text-[11px]">
-            <span>Privacy Policy</span>
-            <span>•</span>
-            <span>Terms of Use</span>
-            <span>•</span>
-            <span>IEEE Code of Ethics</span>
+            <Link href="/privacy" className="hover:text-sky-300 hover:underline transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-500">•</span>
+            <Link href="/terms" className="hover:text-sky-300 hover:underline transition-colors">
+              Terms of Use
+            </Link>
+            <span className="text-slate-500">•</span>
+            <Link href="/code-of-ethics" className="hover:text-sky-300 hover:underline transition-colors">
+              IEEE Code of Ethics
+            </Link>
           </div>
         </div>
       </div>

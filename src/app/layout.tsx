@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "IEEE GU SB | IEEE Galgotias University Student Branch",
@@ -35,7 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-purple-600 selection:text-white">
+      <body className="bg-[#060911] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-purple-600 selection:text-white">
+        <ScrollProgress />
         <Navbar />
         <main className="flex-grow pt-20">{children}</main>
         <Footer />

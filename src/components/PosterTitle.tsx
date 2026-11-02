@@ -9,35 +9,45 @@ interface PosterTitleProps {
 export const PosterTitle: React.FC<PosterTitleProps> = ({ subtitle }) => {
   return (
     <div className="text-center py-6 sm:py-10 select-none">
-      {/* Top Triple Logos */}
-      <div className="flex items-center justify-center gap-6 sm:gap-10 mb-8 opacity-90">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-gradient-to-tr from-red-600 to-amber-500 flex items-center justify-center font-bold text-white text-xs shadow-md">
-            GU
-          </div>
-          <div className="text-left font-serif text-[11px] font-bold text-slate-200 tracking-wider">
-            GALGOTIAS<br />UNIVERSITY
-          </div>
+      {/* Top Triple Logos with real assets */}
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-8">
+        <div className="flex items-center h-11 px-3 py-1.5 rounded-xl bg-white/95 border border-white/20 shadow-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logos/gulogo.png"
+            alt="Galgotias University"
+            className="h-7 w-auto object-contain"
+          />
         </div>
 
-        <div className="h-6 w-px bg-white/20"></div>
+        <div className="h-6 w-px bg-white/20 hidden sm:block"></div>
 
-        <div className="flex items-center gap-2">
-          <div className="w-9 h-8 bg-[#00629B] rounded flex items-center justify-center font-black text-white text-xs tracking-widest shadow-md">
-            IEEE
-          </div>
+        <div className="flex items-center h-11 px-3 py-1.5 rounded-xl bg-white/95 border border-white/20 shadow-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/sponsors/ieee.png"
+            alt="IEEE"
+            className="h-6 w-auto object-contain"
+          />
         </div>
 
-        <div className="h-6 w-px bg-white/20"></div>
+        <div className="h-6 w-px bg-white/20 hidden sm:block"></div>
 
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-gradient-to-br from-blue-600 to-purple-800 p-0.5 shadow-md">
-            <div className="w-full h-full bg-[#0b0f19] rounded flex items-center justify-center font-bold text-[10px] text-purple-300">
-              GU SB
+        {/* IEEE Student Branch Logo */}
+        <div className="flex items-center gap-2 h-11 px-3 py-1.5 rounded-xl bg-white/95 border border-white/20 shadow-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logos/ieee-sb-logo.jpg"
+            alt="IEEE Student Branch"
+            className="h-6 w-auto object-contain rounded"
+          />
+          <div className="text-left leading-tight hidden sm:block">
+            <div className="text-[11px] font-bold text-slate-900">
+              IEEE GU SB
             </div>
-          </div>
-          <div className="text-left font-sans text-[10px] font-semibold text-slate-300">
-            Student<br />Branch
+            <div className="text-[9px] text-slate-500 font-medium">
+              Student Branch
+            </div>
           </div>
         </div>
       </div>

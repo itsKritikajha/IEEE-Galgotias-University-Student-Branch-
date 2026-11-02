@@ -2,11 +2,30 @@
 
 import React from "react";
 import Link from "next/link";
-import { Sparkles, Calendar, MapPin, ExternalLink, Globe, FileText, CheckCircle2, ArrowRight, BrainCircuit, ShieldCheck, Wifi, Database, Cpu, Blocks } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Sparkles,
+  Calendar,
+  MapPin,
+  ExternalLink,
+  Globe,
+  FileText,
+  CheckCircle2,
+  ArrowRight,
+  BrainCircuit,
+  ShieldCheck,
+  Wifi,
+  Database,
+  Cpu,
+  Blocks,
+  Award,
+} from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { CommitteeGrid } from "@/components/CommitteeGrid";
 import { AttractionsCarousel } from "@/components/AttractionsCarousel";
 import { LogoStrip } from "@/components/LogoStrip";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { ShimmerButton } from "@/components/ui/ShimmerButton";
 import { ICCSAI_INFO, ICCSAI_IMPORTANT_DATES, ICCSAI_TRACKS } from "@/data/iccsaiData";
 
 export default function IccsaiHubPage() {
@@ -20,47 +39,63 @@ export default function IccsaiHubPage() {
   };
 
   return (
-    <div className="space-y-16 py-10 pb-20">
-      {/* 1. HERO SECTION */}
+    <div className="space-y-16 py-10 pb-20 overflow-hidden">
+      {/* 1. HERO SECTION WITH PURPLE/BLUE AURORA */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] via-[#3b0764] to-[#070a12] py-16 sm:py-24 border-b border-purple-500/30">
+        <div className="absolute top-10 right-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-[130px] pointer-events-none animate-pulse-slow" />
+        <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-sky-500/15 rounded-full blur-[130px] pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg"
+          >
             <Sparkles className="w-4 h-4 text-amber-400" />
             <span>4th IEEE International Conference • IEEE Xplore Proceeding</span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-5xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-5xl mx-auto"
+          >
             {ICCSAI_INFO.fullTitle}
-          </h1>
+          </motion.h1>
 
-          <p className="text-base sm:text-xl text-purple-200 font-serif italic max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-base sm:text-xl text-purple-200 font-serif italic max-w-3xl mx-auto font-light"
+          >
             &ldquo;Advancing Intelligent Systems, Cyber Resilience, and Next-Gen Communication Infrastructures&rdquo;
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-200">
-            <span className="bg-white/10 px-4 py-2 rounded-xl border border-white/15 flex items-center gap-1.5">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-200"
+          >
+            <span className="bg-white/10 px-4 py-2 rounded-xl border border-white/15 flex items-center gap-1.5 backdrop-blur-md">
               <Calendar className="w-4 h-4 text-amber-400" /> {ICCSAI_INFO.dates}
             </span>
-            <span className="bg-white/10 px-4 py-2 rounded-xl border border-white/15 flex items-center gap-1.5">
+            <span className="bg-white/10 px-4 py-2 rounded-xl border border-white/15 flex items-center gap-1.5 backdrop-blur-md">
               <MapPin className="w-4 h-4 text-red-400" /> {ICCSAI_INFO.venue.name}, {ICCSAI_INFO.venue.city}
             </span>
-          </div>
+          </motion.div>
 
           {/* CTA Buttons */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={ICCSAI_INFO.cmtSubmitUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-red-500 text-slate-950 font-extrabold text-sm shadow-xl hover:scale-105 transition-all flex items-center gap-2"
-            >
-              <span>Submit Paper via Microsoft CMT</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <ShimmerButton href={ICCSAI_INFO.cmtSubmitUrl} icon={<ExternalLink className="w-4 h-4" />}>
+              Submit Paper via Microsoft CMT
+            </ShimmerButton>
 
             <Link
               href="/iccsai-2026/registration"
-              className="px-6 py-3.5 rounded-xl bg-purple-600/40 hover:bg-purple-600 border border-purple-400/40 text-white font-semibold text-sm backdrop-blur-md transition-all"
+              className="px-6 py-3.5 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-400/40 text-white font-bold text-xs sm:text-sm backdrop-blur-md transition-all hover:scale-105"
             >
               Registration Fees & Guidelines
             </Link>
@@ -73,23 +108,23 @@ export default function IccsaiHubPage() {
         </div>
       </section>
 
-      {/* 2. IMPORTANT DATES TABLE */}
+      {/* 2. IMPORTANT DATES TABLE (Tremor Style Timeline) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center space-y-2 max-w-xl mx-auto">
           <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
             Timeline & Deadlines
           </span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
             Important Conference Dates
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto rounded-2xl bg-[#0f172a] border border-white/10 overflow-hidden shadow-2xl">
+        <div className="max-w-3xl mx-auto rounded-3xl bg-[#0c1222]/90 border border-white/10 overflow-hidden shadow-2xl backdrop-blur-xl">
           <table className="w-full text-left text-xs sm:text-sm">
             <thead className="bg-purple-950/80 text-amber-300 font-serif border-b border-white/10 uppercase tracking-wider">
               <tr>
-                <th className="py-3.5 px-6">Milestone Event</th>
-                <th className="py-3.5 px-6 text-right">Deadline Date</th>
+                <th className="py-4 px-6">Milestone Event</th>
+                <th className="py-4 px-6 text-right">Deadline Date</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/10 text-slate-200">
@@ -97,14 +132,18 @@ export default function IccsaiHubPage() {
                 <tr
                   key={idx}
                   className={`hover:bg-purple-900/20 transition-colors ${
-                    item.highlight ? "bg-amber-500/10 font-semibold text-amber-300" : ""
+                    item.highlight ? "bg-amber-500/10 font-bold text-amber-300" : ""
                   }`}
                 >
-                  <td className="py-3.5 px-6 flex items-center gap-2">
-                    <CheckCircle2 className={`w-4 h-4 ${item.highlight ? "text-amber-400" : "text-sky-400"}`} />
+                  <td className="py-3.5 px-6 flex items-center gap-2.5">
+                    <CheckCircle2
+                      className={`w-4 h-4 shrink-0 ${
+                        item.highlight ? "text-amber-400 animate-pulse" : "text-sky-400"
+                      }`}
+                    />
                     <span>{item.event}</span>
                   </td>
-                  <td className="py-3.5 px-6 text-right font-mono">{item.date}</td>
+                  <td className="py-3.5 px-6 text-right font-mono font-semibold">{item.date}</td>
                 </tr>
               ))}
             </tbody>
@@ -112,17 +151,17 @@ export default function IccsaiHubPage() {
         </div>
       </section>
 
-      {/* 3. CONFERENCE TRACKS */}
+      {/* 3. CONFERENCE TRACKS (Spotlight Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2 max-w-xl mx-auto">
           <span className="text-xs font-bold text-sky-400 uppercase tracking-widest">
             Call for Papers
           </span>
-          <h2 className="font-serif text-3xl font-bold text-white">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
             Technical Research Tracks
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            We invite original, unpublished high-quality research papers across 6 major technical tracks.
+            We invite original, high-quality research papers across 6 specialized technical tracks.
           </p>
         </div>
 
@@ -130,35 +169,39 @@ export default function IccsaiHubPage() {
           {ICCSAI_TRACKS.map((track) => {
             const IconComp = iconMap[track.iconName] || BrainCircuit;
             return (
-              <div
+              <SpotlightCard
                 key={track.id}
-                className="p-6 rounded-2xl bg-gradient-to-b from-[#131b2e] to-[#0a0e17] border border-white/10 hover:border-sky-400/40 transition-all duration-300 space-y-4 flex flex-col justify-between"
+                className="p-6 space-y-4 flex flex-col justify-between"
+                spotlightColor="rgba(56, 189, 248, 0.12)"
               >
                 <div className="space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-300">
+                  <div className="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-300 shadow-inner">
                     <IconComp className="w-5 h-5" />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-white">
                     {track.title}
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed font-light">
                     {track.description}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/10 space-y-1">
+                <div className="pt-3 border-t border-white/10 space-y-1.5">
                   <span className="text-[10px] font-bold uppercase text-amber-400 tracking-wider block">
                     Sub-topics include:
                   </span>
                   <div className="flex flex-wrap gap-1">
                     {track.topics.map((top, i) => (
-                      <span key={i} className="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-300 border border-white/10">
+                      <span
+                        key={i}
+                        className="text-[10px] bg-white/5 px-2 py-0.5 rounded-md text-slate-300 border border-white/10"
+                      >
                         {top}
                       </span>
                     ))}
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>
@@ -167,21 +210,38 @@ export default function IccsaiHubPage() {
       {/* 4. KEY HIGHLIGHTS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/60 to-indigo-950 border border-purple-400/30 space-y-2 text-center">
+          <SpotlightCard
+            className="p-6 space-y-2 text-center"
+            spotlightColor="rgba(245, 158, 11, 0.15)"
+          >
             <Globe className="w-8 h-8 text-amber-400 mx-auto" />
             <h4 className="font-serif text-lg font-bold text-white">Global Research Participation</h4>
-            <p className="text-xs text-purple-200">Authors and keynote speakers from 20+ countries across North America, Europe, and Asia-Pacific.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/60 to-sky-950 border border-sky-400/30 space-y-2 text-center">
+            <p className="text-xs text-slate-300 font-light">
+              Authors and keynote speakers from 20+ countries across North America, Europe, and Asia-Pacific.
+            </p>
+          </SpotlightCard>
+
+          <SpotlightCard
+            className="p-6 space-y-2 text-center"
+            spotlightColor="rgba(56, 189, 248, 0.15)"
+          >
             <FileText className="w-8 h-8 text-sky-400 mx-auto" />
             <h4 className="font-serif text-lg font-bold text-white">IEEE Xplore Publication</h4>
-            <p className="text-xs text-sky-200">All presented papers will be submitted to IEEE Xplore Digital Library for indexing in Scopus and Web of Science.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-red-900/60 to-amber-950 border border-red-400/30 space-y-2 text-center">
+            <p className="text-xs text-slate-300 font-light">
+              All presented papers will be submitted to IEEE Xplore Digital Library for indexing in Scopus and Web of Science.
+            </p>
+          </SpotlightCard>
+
+          <SpotlightCard
+            className="p-6 space-y-2 text-center"
+            spotlightColor="rgba(239, 68, 68, 0.15)"
+          >
             <Sparkles className="w-8 h-8 text-red-400 mx-auto" />
             <h4 className="font-serif text-lg font-bold text-white">Expert Keynote Sessions</h4>
-            <p className="text-xs text-red-200">Addresses by IEEE Fellows, IIT Professors, and Industry Research Directors.</p>
-          </div>
+            <p className="text-xs text-slate-300 font-light">
+              Addresses by IEEE Fellows, IIT Professors, and Industry Research Directors.
+            </p>
+          </SpotlightCard>
         </div>
       </section>
 
